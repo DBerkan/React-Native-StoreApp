@@ -1,0 +1,29 @@
+buildscript {
+    ext {
+        buildToolsVersion = "34.0.0"
+        minSdkVersion = 21
+        compileSdkVersion = 34
+        targetSdkVersion = 34
+        ndkVersion = "25.1.8937393"
+        kotlinVersion = "1.8.0"
+    }
+    repositories {
+        google()
+        mavenCentral()
+    }
+    dependencies {
+        classpath("com.android.tools.build:gradle")
+        classpath("com.facebook.react:react-native-gradle-plugin")
+        classpath("org.jetbrains.kotlin:kotlin-gradle-plugin")
+        
+    }
+}
+
+apply plugin: "com.facebook.react.rootproject"
+
+dotenv {
+    // the package name that is added to the top of your source code file: `import X.Y.Z`
+    packageName = "com.foo.bar"
+    // the path to the source code in your Android app module. This is probably `src/main/java` but could be something else like `src/main/kotlin`
+    sourcePath = "src/main/java/"
+}
